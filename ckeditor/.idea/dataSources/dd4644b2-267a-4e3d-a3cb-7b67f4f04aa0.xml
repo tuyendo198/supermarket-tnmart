@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="tienganh_db@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="tienganh_db">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="kinhte_db"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="phpmyadmin"/>
+    <schema id="8" parent="1" name="qlsinhvien"/>
+    <schema id="9" parent="1" name="ql_hanghoa"/>
+    <schema id="10" parent="1" name="ql_sv"/>
+    <schema id="11" parent="1" name="tbl_login"/>
+    <table id="12" parent="2" name="tbl_anh"/>
+    <table id="13" parent="2" name="tbl_canbo"/>
+    <table id="14" parent="2" name="tbl_dangnhap"/>
+    <table id="15" parent="2" name="tbl_loaitin"/>
+    <table id="16" parent="2" name="tbl_quyen"/>
+    <table id="17" parent="2" name="tbl_sukien"/>
+    <table id="18" parent="2" name="tbl_theloai"/>
+    <table id="19" parent="2" name="tbl_tinchitiet"/>
+    <column id="20" parent="12" name="iMaanh">
+      <Position>1</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="12" name="sTenanh">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="12" name="iTrangthai">
+      <Position>3</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <key id="23" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>iMaanh</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="13" name="PK_iMacanbo">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="13" name="sTencanbo">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="13" name="dNgaysinh">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="27" parent="13" name="sGioitinh">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="13" name="sSdt">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="29" parent="13" name="sEmail">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="30" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PK_iMacanbo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="31" parent="14" name="PK_sTendangnhap">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="14" name="FK_iMacanbo">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="14" name="FK_iMaquyen">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="14" name="sMatkhau">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="35" parent="14" name="macanbo">
+      <ColNames>FK_iMacanbo</ColNames>
+    </index>
+    <index id="36" parent="14" name="macanbo_2">
+      <ColNames>FK_iMacanbo</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="37" parent="14" name="maquyen">
+      <ColNames>FK_iMaquyen</ColNames>
+    </index>
+    <key id="38" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PK_sTendangnhap</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="39" parent="14" name="macanbo_2">
+      <ColNames>FK_iMacanbo</ColNames>
+      <UnderlyingIndexName>macanbo_2</UnderlyingIndexName>
+    </key>
+    <foreign-key id="40" parent="14" name="tbl_dangnhap_ibfk_2">
+      <ColNames>FK_iMacanbo</ColNames>
+      <RefSchemaName>tienganh_db</RefSchemaName>
+      <RefTableName>tbl_canbo</RefTableName>
+      <RefColNames>PK_iMacanbo</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="41" parent="14" name="tbl_dangnhap_ibfk_1">
+      <ColNames>FK_iMaquyen</ColNames>
+      <RefSchemaName>tienganh_db</RefSchemaName>
+      <RefTableName>tbl_quyen</RefTableName>
+      <RefColNames>PK_iMaquyen</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="42" parent="15" name="PK_iMaloaitin">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="15" name="sTenloaitin">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="15" name="sTrangthai">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="45" parent="15" name="FK_iMatheloai">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="46" parent="15" name="matheloai">
+      <ColNames>FK_iMatheloai</ColNames>
+    </index>
+    <key id="47" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PK_iMaloaitin</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="48" parent="15" name="tbl_loaitin_ibfk_1">
+      <ColNames>FK_iMatheloai</ColNames>
+      <RefSchemaName>tienganh_db</RefSchemaName>
+      <RefTableName>tbl_theloai</RefTableName>
+      <RefColNames>PK_iMatheloai</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="49" parent="16" name="PK_iMaquyen">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="50" parent="16" name="sTenquyen">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="51" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PK_iMaquyen</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="52" parent="17" name="PK_iMasukien">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="53" parent="17" name="sTensukien">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <key id="54" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PK_iMasukien</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="55" parent="18" name="PK_iMatheloai">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="18" name="sTentheloai">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="18" name="iTrangthai">
+      <Position>3</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <column id="58" parent="18" name="sMau">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="59" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PK_iMatheloai</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="19" name="PK_iMatin">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="19" name="FK_iMaloaitin">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="19" name="PK_iCanbodang">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="19" name="sTieude">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="64" parent="19" name="sTomtatnoidung">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="65" parent="19" name="sNoidung">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="19" name="dNgaydang">
+      <Position>7</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="19" name="sAnhdaidien">
+      <Position>8</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="68" parent="19" name="FK_iSukien">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="69" parent="19" name="iDouutien">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="70" parent="19" name="canbodang">
+      <ColNames>PK_iCanbodang</ColNames>
+    </index>
+    <index id="71" parent="19" name="maloaitin">
+      <ColNames>FK_iMaloaitin</ColNames>
+    </index>
+    <index id="72" parent="19" name="sukien">
+      <ColNames>FK_iSukien</ColNames>
+    </index>
+    <key id="73" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PK_iMatin</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="74" parent="19" name="tbl_tinchitiet_ibfk_2">
+      <ColNames>FK_iMaloaitin</ColNames>
+      <RefSchemaName>tienganh_db</RefSchemaName>
+      <RefTableName>tbl_loaitin</RefTableName>
+      <RefColNames>PK_iMaloaitin</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="75" parent="19" name="tbl_tinchitiet_ibfk_1">
+      <ColNames>PK_iCanbodang</ColNames>
+      <RefSchemaName>tienganh_db</RefSchemaName>
+      <RefTableName>tbl_canbo</RefTableName>
+      <RefColNames>PK_iMacanbo</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="76" parent="19" name="tbl_tinchitiet_ibfk_3">
+      <ColNames>FK_iSukien</ColNames>
+      <RefSchemaName>tienganh_db</RefSchemaName>
+      <RefTableName>tbl_sukien</RefTableName>
+      <RefColNames>PK_iMasukien</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+  </database-model>
+</dataSource>

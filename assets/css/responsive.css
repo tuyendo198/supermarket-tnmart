@@ -1,0 +1,74 @@
+@media screen and (max-width: 1025px){
+	.hot:before{
+		left: 32.3%;
+	}
+	.hot:after{
+		right: 32.3%;
+	}
+	.qc_sp{
+		margin-top: 10px !important;
+	}
+}
+@media screen and (min-width: 769px) and (max-width: 991px){
+	.hot:before{
+		top: 0px;
+		left: 26.3%;
+	}
+	.hot:after{
+		top: 0px;
+		right: 26.3%;
+	}
+	.qc_sp{
+		padding-right: 15px;
+	}
+}
+@media screen and (min-width: 375px) and (max-width: 812px){
+
+}
+@media screen and (max-width: 1024px){
+
+}
+@media screen and (max-width: 768px){
+
+}
+@media screen and (max-width: 767px){
+
+}
+@media screen and (max-width: 480px){
+
+}
+@media screen and (max-width: 375px){
+	#myCarousel{
+		margin-top: 10px;
+	}
+}
+@media screen and (max-width: 360px){
+
+}
+/* @media (max-width: 767px) {
+	.col-xs-12 > .tinnoibat{
+		margin-top:30px;
+	}
+}
+@media (max-width: 767px) {
+	.col-xs-12 > .tieude1 {
+		margin-top:50px;
+		margin-left: 10px;
+	}
+}
+@media (max-width: 767px) {
+	.col-xs-12 > .cc2 {
+		margin-left:0px;
+	}
+}
+
+@media (max-width: 767px) {
+	.col-xs-12 > .row > .cc3 {
+		margin-left:20px;
+	}
+}
+@media (max-width: 767px) {
+	.col-xs-12 > .row > .cc4 {
+		margin-left:32px;
+	}
+} */
